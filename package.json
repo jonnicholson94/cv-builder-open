@@ -1,0 +1,42 @@
+{
+  "name": "cv-builder",
+  "version": "1.0.0",
+  "description": "An app to build a CV",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnicholson94/cv-builder-open.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnicholson94/cv-builder-open/issues"
+  },
+  "homepage": "https://github.com/jonnicholson94/cv-builder-open#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@reduxjs/toolkit": "^1.9.3",
+    "@supabase/auth-helpers-nextjs": "^0.5.9",
+    "@supabase/auth-helpers-react": "^0.3.1",
+    "@supabase/supabase-js": "^2.15.0",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "typescript": "5.0.3"
+  }
+}
