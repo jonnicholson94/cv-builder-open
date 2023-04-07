@@ -2,7 +2,7 @@
 const HomePage = () => {
     
     return (
-        <div>Hello world</div>
+        <input className="auth-input" placeholder="Example placeholder" />
     )
 }
 

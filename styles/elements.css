@@ -1,0 +1,37 @@
+
+.auth-input {
+    height: 50px;
+    width: 80%;
+    font-size: 16px;
+}
+
+.auth-button {
+    height: 50px;
+    width: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--primary-cta);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-cta);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-link {
+    height: auto;
+    color: var(--primary-color);
+}
+
+.auth-logo {
+    height: 30px;
+    width: 30px;
+}
+
+.spinner {
+    height: 15px;
+    width: 15px;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
