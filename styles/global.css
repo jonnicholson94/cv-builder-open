@@ -9,7 +9,9 @@
     --primary-bg: #000;
     --primary-color: #fff;
     --input-bg: #151621;
-    --border: #474E68;
+    --alt-bg: #21232ed9;
+    --alt-color: #50577A;
+    --border: #2c2d3c;
     --active-border: #2161DC;
     --success: #008000;
     --failed: #C52828;
@@ -41,5 +43,8 @@ input:active, input:focus, button:focus {
     outline: none;
 }
 
+.red {
+    background-color: red;
+}
 
 

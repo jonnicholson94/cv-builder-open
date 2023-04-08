@@ -27,6 +27,11 @@
     width: 30px;
 }
 
+.small-logo {
+    height: 17px;
+    width: 17px;
+}
+
 .spinner {
     height: 15px;
     width: 15px;
@@ -34,4 +39,64 @@
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.avatar {
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-cta);
+    font-size: 10px;
+    border-radius: 50%;
+}
+
+.view-cv-box {
+    height: 75px;
+    width: 90%;
+    border-radius: 3px;
+    background-color: var(--alt-bg);
+    border: 1px solid var(--border);
+    text-decoration: none;
+}
+
+.view-cv-heading {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.view-cv-paragraph {
+    font-size: 10px;
+    color: var(--alt-color);
+}
+
+.view-cv-icon {
+    color: var(--alt-color);
+}
+
+.sidebar-link {
+    font-size: 16px;
+    color: var(--alt-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar-active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.dashboard-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.hamburger-icon {
+    display: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburger-icon {
+        display: flex;
+    }
 }

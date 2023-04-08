@@ -6,3 +6,13 @@
     75% { transform: rotate(270deg) }
     100% {transform: rotate(360deg) }
 }
+
+@keyframes slideIn {
+    0% { left: -70% }
+    100% { left: 0 }
+}
+
+@keyframes slideOut {
+    0% { left: 0 }
+    100% { left: -70% }
+}
