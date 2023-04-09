@@ -137,8 +137,28 @@
     color: var(--alt-color);
 }
 
+.dashboard-heading-list, .dashboard-list {
+    height: 50px;
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-job-heading, .dashboard-list-item {
+    color: var(--alt-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-main {
+    color: var(--primary-color);
+}
+
 @media only screen and (max-width: 900px) {
     .hamburger-icon {
         display: flex;
+    }
+
+    .dashboard-job-heading, .dashboard-list-item {
+        font-size: 12px;
     }
 }
