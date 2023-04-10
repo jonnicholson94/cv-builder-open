@@ -1,4 +1,6 @@
 
+import { useEffect } from "react";
+
 type Props = {
     placeholder: string,
     type: string,
@@ -16,6 +18,14 @@ const DashboardInput = ({ placeholder, type, state, setState }: Props) => {
         setState(e.target.value)
     }
 
+    const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+
+        if (e.code === "Enter") {
+            (e.target as HTMLElement).blur()
+        }
+        
+    }
+
     return (
         <input 
             className="dashboard-input" 
@@ -23,7 +33,8 @@ const DashboardInput = ({ placeholder, type, state, setState }: Props) => {
             type={type}
             value={state}
             onChange={handleChange} 
-            onBlur={handleBlur} />
+            onBlur={handleBlur}
+            onKeyDown={handleEnterPress} />
     )
 }
 

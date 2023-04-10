@@ -41,6 +41,12 @@
     animation-iteration-count: infinite;
 }
 
+.saving-text {
+    color: var(--alt-color);
+    margin-left: 10px;
+    font-size: 14px;
+}
+
 .avatar, .avatar-alt {
     height: 25px;
     width: 25px;
@@ -54,6 +60,29 @@
 
 .avatar-alt {
     background-color: var(--secondary-cta);
+}
+
+.toolbar {
+    position: fixed;
+    bottom: 20px;
+    background-color: var(--alt-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.toolbar-title {
+    height: auto;
+    color: var(--secondary-cta);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.toolbar-shortcut {
+    padding: 10px 20px;
+    background-color: var(--secondary-cta);
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .view-cv-box {
@@ -123,8 +152,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--alt-color);
-    background-color: var(--secondary-cta);
+    border: 1px solid var(--border);
+    background-color: var(--alt-bg);
     color: #fff;
     font-weight: bold;
     border-radius: 5px;
@@ -192,6 +221,19 @@
     padding: 10px;
 }
 
+.help-card-portal {
+    background-color: var(--alt-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.help-card-content {
+    padding: 0 10px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 200;
+}
+
 @media only screen and (max-width: 900px) {
     .hamburger-icon {
         display: flex;
@@ -199,5 +241,9 @@
 
     .dashboard-job-heading, .dashboard-list-item {
         font-size: 12px;
+    }
+
+    .toolbar {
+        display: none;
     }
 }

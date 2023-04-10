@@ -34,7 +34,7 @@ input, textarea {
 }
 
 input::placeholder, textarea::placeholder {
-    color: var(--border);
+    color: var(--alt-color);
 }
 
 input:active, input:focus, button:focus, textarea:active, textarea:focus {

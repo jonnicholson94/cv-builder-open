@@ -3,6 +3,10 @@
     width: 30%;
 }
 
+.dashboard-wrapper:focus {
+    outline: none;
+}
+
 .sidebar {
     width: 15%;
     border-right: 1px solid var(--border);

@@ -1,5 +1,6 @@
 
 import { useState } from "react"
+import { useAppSelector } from "../lib/reduxHelpers"
 
 import DashboardComponent from "../components/DashboardComponent"
 import DashboardWrapper from "../components/DashboardWrapper"
@@ -14,11 +15,12 @@ import DashboardEducation from "../components/DashboardEducation"
 import DashboardSideProjects from "../components/DashboardSideProjects"
 import DashboardAbout from "../components/DashboardAbout"
 
-import { Active } from "../types/sidebar"
+import Toolbar from "../elements/Toolbar"
 
 const Dashboard = () => {
 
-    const [active, setActive] = useState<Active>("Your details")
+    const { active } = useAppSelector((state) => state.active)
+
     const [hamburger, setHamburger] = useState<boolean>(null)
 
     const [name, setName] = useState<string>("")
@@ -30,9 +32,9 @@ const Dashboard = () => {
 
     return (
         <DashboardWrapper>
-            <Sidebar state={active} setState={setActive} setShow={setHamburger} />
+            <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} content={active} />
+                <DashboardHeader setState={setHamburger} />
                 <DashboardForm>
                     { active === "Your details" && <DashboardDetails name={name} setName={setName} /> }
                     { active === "Contact details" && <DashboardContact phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} twitter={twitter} setTwitter={setTwitter} linkedIn={linkedIn} setLinkedIn={setLinkedIn} github={github} setGithub={setGithub} /> }
@@ -42,7 +44,8 @@ const Dashboard = () => {
                     { active === "About" && <DashboardAbout /> }
                 </DashboardForm>
             </DashboardComponent>
-            <Hamburger state={active} setState={setActive} show={hamburger} setShow={setHamburger} />
+            <Hamburger show={hamburger} setShow={setHamburger} />
+            <Toolbar />
         </DashboardWrapper>
     )
 }

@@ -1,29 +1,36 @@
+import { useAppDispatch, useAppSelector } from "../lib/reduxHelpers"
+import { changeActive } from "../features/activeSlice"
 import { Active } from "../types/sidebar"
+import HelpCard from "./HelpCard"
 
 type Props = {
-    state: Active,
-    setState: React.Dispatch<React.SetStateAction<Active>>,
     setShow: React.Dispatch<React.SetStateAction<boolean>>,
-    content: Active
+    content: Active,
+    help: string
 }
 
-const SidebarLink = ({ state, setState, setShow, content }: Props) => {
+const SidebarLink = ({ setShow, content, help }: Props) => {
+
+    const { active } = useAppSelector((state) => state.active)
+    const dispatch = useAppDispatch()
 
     const handleClick = () => {
 
-        if (state === content) {
+        if (active === content) {
             return
         }
 
         setShow(false)
-        setState(content)
+        dispatch(changeActive(content))
 
     }
 
     return (
-        <p className={`sidebar-link ${ state === content ? "sidebar-active" : ""}`} onClick={() => handleClick()}>
-            {content}
-        </p>
+        <HelpCard content={help} side="right">
+            <p className={`sidebar-link ${ active === content ? "sidebar-active" : ""}`} onClick={() => handleClick()}>
+                {content}
+            </p>
+        </HelpCard>
     )
 }
 
