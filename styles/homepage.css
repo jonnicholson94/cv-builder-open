@@ -1,0 +1,142 @@
+
+.homepage-nav {
+    height: 60px;
+    border-bottom: 1px solid var(--border);
+}
+
+.homepage-nav-logo {
+    width: 100px;
+}
+
+.homepage-nav-link {
+    height: 35px;
+    padding: 0 20px;
+    background-color: var(--primary-cta);
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.homepage-hero-sub-heading {
+    font-size: 48px;
+    text-align: center;
+}
+
+.homepage-hero-highlighted-heading {
+    font-size: 72px;
+    color: var(--primary-cta);
+    text-align: center;
+}
+
+.homepage-hero-paragraph {
+    color: var(--primary-color);
+    font-size: 20px;
+    text-align: center;
+}
+
+.homepage-hero-cta {
+    height: 50px;
+    width: 250px;
+    background-color: var(--primary-cta);
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #6B728E;
+}
+
+.homepage-hero-image {
+    height: auto;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #6B728E;
+}
+
+.homepage-info {
+    width: 80%;
+}
+
+.homepage-info-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.homepage-info-paragraph {
+    font-size: 16px;
+    color: var(--alt-color);
+}
+
+.homepage-info-image {
+    height: auto;
+    width: 47.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #6B728E;
+}
+
+.homepage-callout {
+    background-color: var(--alt-bg);
+    border-radius: 5px;
+    border: 1px solid var(--border);
+}
+
+.homepage-callout-heading {
+    font-size: 36px;
+}
+
+.homepage-callout-paragraph {
+    color: var(--alt-color);
+    font-size: 18px;
+}
+
+.homepage-footer {
+    border-top: 1px solid var(--border);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.homepage-footer-paragraph {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+    .homepage-hero-sub-heading {
+        font-size: 36px;
+    }
+
+    .homepage-hero-highlighted-heading {
+        font-size: 52px;
+    }
+
+    .homepage-hero-paragraph {
+        font-size: 16px;
+    }
+
+    .homepage-info {
+        flex-direction: column;
+    }
+
+    .homepage-info-content {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .homepage-info-image {
+        width: 100%;
+    }
+
+    .homepage-callout-heading {
+        width: 90%;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .homepage-callout-paragraph {
+        width: 90%;
+        text-align: center;
+        font-size: 16px;
+    }
+}

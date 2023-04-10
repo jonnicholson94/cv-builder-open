@@ -14,6 +14,7 @@ import "../styles/text.css"
 import "../styles/components.css"
 import "../styles/elements.css"
 import "../styles/animations.css"
+import "../styles/homepage.css"
 
 const MyApp = ({ Component, pageProps }) => {
 
