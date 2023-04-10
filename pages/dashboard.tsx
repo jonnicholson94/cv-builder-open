@@ -9,9 +9,12 @@ import Hamburger from "../components/Hamburger"
 import DashboardForm from "../components/DashboardForm"
 import DashboardDetails from "../components/DashboardDetails"
 import DashboardContact from "../components/DashboardContact"
+import DashboardJobs from "../components/DashboardJobs"
+import DashboardEducation from "../components/DashboardEducation"
+import DashboardSideProjects from "../components/DashboardSideProjects"
+import DashboardAbout from "../components/DashboardAbout"
 
 import { Active } from "../types/sidebar"
-import DashboardJobs from "../components/DashboardJobs"
 
 const Dashboard = () => {
 
@@ -34,6 +37,9 @@ const Dashboard = () => {
                     { active === "Your details" && <DashboardDetails name={name} setName={setName} /> }
                     { active === "Contact details" && <DashboardContact phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} twitter={twitter} setTwitter={setTwitter} linkedIn={linkedIn} setLinkedIn={setLinkedIn} github={github} setGithub={setGithub} /> }
                     { active === "Job history" && <DashboardJobs />}
+                    { active === "Education" && <DashboardEducation />}
+                    { active === "Side projects" && <DashboardSideProjects /> }
+                    { active === "About" && <DashboardAbout /> }
                 </DashboardForm>
             </DashboardComponent>
             <Hamburger state={active} setState={setActive} show={hamburger} setShow={setHamburger} />

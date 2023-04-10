@@ -23,7 +23,7 @@ body {
     background-color: var(--primary-bg);
 }
 
-input {
+input, textarea {
     padding-left: 10px;
     background-color: var(--primary-bg);
     color: var(--primary-color);
@@ -33,11 +33,11 @@ input {
     margin-bottom: 10px;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: var(--border);
 }
 
-input:active, input:focus, button:focus {
+input:active, input:focus, button:focus, textarea:active, textarea:focus {
     border: 1px solid var(--active-border);
     box-shadow: 0 0 3px var(--active-border);
     outline: none;

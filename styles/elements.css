@@ -153,6 +153,45 @@
     color: var(--primary-color);
 }
 
+.dashboard-link-button {
+    height: 40px;
+    width: auto;
+    padding: 0 20px;
+    background-color: var(--alt-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.side-project-box {
+    height: auto;
+    background-color: var(--alt-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.side-project-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.side-project-description {
+    font-size: 14px;
+    color: var(--alt-color);
+    margin-top: 5px;
+}
+
+.side-project-icon {
+    color: var(--alt-color);
+}
+
+.dashboard-textarea {
+    min-height: 150px;
+    background-color: var(--alt-bg);
+    padding: 10px;
+}
+
 @media only screen and (max-width: 900px) {
     .hamburger-icon {
         display: flex;

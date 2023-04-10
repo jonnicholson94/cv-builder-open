@@ -1,19 +1,13 @@
+import DashboardLinkButton from "../elements/DashboardLinkButton"
+import DashboardListHeading from "../elements/DashboardListHeading"
+import DashboardListItem from "../elements/DashboardListItem"
 
 const DashboardJobs = () => {
     return (
         <>
-            <div className="dashboard-heading-list width-100 flex-center">
-                <p className="dashboard-job-heading width-30">Job title</p>
-                <p className="dashboard-job-heading width-30">Employer</p>
-                <p className="dashboard-job-heading width-20">Start date</p>
-                <p className="dashboard-job-heading width-20">End date</p>
-            </div>
-            <div className="dashboard-list width-100 flex-center">
-                <p className="dashboard-list-item list-main width-30">Product manager</p>
-                <p className="dashboard-list-item width-30">LOVESPACE</p>
-                <p className="dashboard-list-item width-20">Apr 22</p>
-                <p className="dashboard-list-item width-20">-</p>
-            </div>
+            <DashboardListHeading title="Job title" employer="Employer" start="Start date" end="End date" />
+            <DashboardListItem title="Product Manager" employer="LOVESPACE" start="Apr 22" end="-" /> 
+            <DashboardLinkButton href="/add-job" content="Add a job" />
         </>
     )
 }
