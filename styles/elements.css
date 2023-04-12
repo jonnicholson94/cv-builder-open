@@ -5,6 +5,10 @@
     font-size: 16px;
 }
 
+.auth-input-error:focus {
+    border: 1px solid var(--failed);
+}
+
 .auth-button {
     height: 50px;
     width: 80%;
@@ -20,6 +24,14 @@
 .auth-link {
     height: auto;
     color: var(--primary-color);
+}
+
+.auth-error-icon, .auth-error {
+    color: var(--failed);
+}
+
+.auth-success-icon, .auth-success {
+    color: var(--success);
 }
 
 .auth-logo {
@@ -169,10 +181,6 @@
 .dashboard-heading-list, .dashboard-list {
     height: 50px;
     border-bottom: 1px solid var(--border);
-}
-
-.dashboard-list {
-    touch-action: none;
 }
 
 .dashboard-job-heading, .dashboard-list-item {

@@ -1,6 +1,8 @@
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useAppSelector } from "../lib/reduxHelpers"
+
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
 import DashboardComponent from "../components/DashboardComponent"
 import DashboardWrapper from "../components/DashboardWrapper"
@@ -17,7 +19,7 @@ import DashboardAbout from "../components/DashboardAbout"
 
 import Toolbar from "../elements/Toolbar"
 
-const Dashboard = () => {
+const Dashboard = ({ user }) => {
 
     const { active } = useAppSelector((state) => state.active)
 
@@ -51,3 +53,27 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
+export const getServerSideProps = async (ctx) => {
+
+    const supabase = createServerSupabaseClient(ctx)
+    
+    const {
+      data: { session },
+    } = await supabase.auth.getSession()
+  
+    if (!session)
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      }
+  
+    return {
+      props: {
+        initialSession: session,
+        user: session.user,
+      },
+    }
+  }

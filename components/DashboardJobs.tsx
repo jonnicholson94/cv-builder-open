@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import DashboardLinkButton from "../elements/DashboardLinkButton"
 import DashboardListHeading from "../elements/DashboardListHeading"
@@ -34,7 +34,6 @@ const DashboardJobs = () => {
     const handleDragOver = (ev) => { ev.preventDefault() }
 
     const handleDrag = (ev) => {
-        console.log(ev.currentTarget.id);
         
         setDragId(ev.currentTarget.id)
     }
@@ -53,8 +52,6 @@ const DashboardJobs = () => {
 
         // Insert the item into the correct element
         const newArray = [...filteredArray.slice(0, elementPosition), foundItem, ...filteredArray.slice(elementPosition)]
-        console.log(newArray);
-        
 
         // Update the original array to be the new array
         setArray(newArray)
