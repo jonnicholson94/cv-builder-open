@@ -176,6 +176,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-right: 5px;
 }
 
 .list-main {
@@ -203,12 +204,14 @@
 .side-project-title {
     font-size: 16px;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .side-project-description {
     font-size: 14px;
     color: var(--alt-color);
     margin-top: 5px;
+    margin-left: 10px;
 }
 
 .side-project-icon {

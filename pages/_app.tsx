@@ -1,6 +1,11 @@
 
+import { useState } from 'react'
+
 import { Provider } from 'react-redux'
 import { store } from '../features/store'
+
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
 
 import { Inter } from 'next/font/google'
 
@@ -18,11 +23,15 @@ import "../styles/homepage.css"
 
 const MyApp = ({ Component, pageProps }) => {
 
+    const [supabase] = useState(() => createBrowserSupabaseClient())
+
     return (
         <Provider store={store}>
-            <main className={inter.className}>
-                <Component {...pageProps} />
-            </main>
+            <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
+                <main className={inter.className}>
+                    <Component {...pageProps} />
+                </main>
+            </SessionContextProvider>
         </Provider>
     )
 }

@@ -20,6 +20,14 @@ const DashboardTextarea = ({ placeholder, state, setState }: Props) => {
         setState(e.target.value)
     }
 
+    const handleEnterPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+
+        if (e.code === "Enter") {
+            (e.target as HTMLElement).blur()
+        }
+        
+    }
+
 
     return (
         <textarea 
@@ -27,7 +35,8 @@ const DashboardTextarea = ({ placeholder, state, setState }: Props) => {
             placeholder={placeholder} 
             value={state} 
             onChange={handleChange}
-            onBlur={handleBlur} />
+            onBlur={handleBlur} 
+            onKeyDown={handleEnterPress} />
     )
 }
 
