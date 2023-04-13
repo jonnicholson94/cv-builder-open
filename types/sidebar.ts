@@ -1,2 +1,2 @@
 
-export type Active = "Your details" | "Contact details" | "Job history" | "Education" | "Side projects" | "About" | "Skills"
+export type Active = "Your details" | "Socials" | "Job history" | "Education" | "Side projects" | "About" | "Skills"

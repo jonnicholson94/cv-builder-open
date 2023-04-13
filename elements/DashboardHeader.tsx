@@ -12,6 +12,7 @@ type Props = {
 const DashboardHeader = ({ setState }: Props) => {
 
     const { active } = useAppSelector((state) => state.active)
+    const { saving } = useAppSelector((state) => state.status)
 
     return (
         <div className="dashboard-header auto-height width-100 flex-center ">
@@ -20,7 +21,7 @@ const DashboardHeader = ({ setState }: Props) => {
                 <h4 className="margin-left-20">{active}</h4>
             </div>
             <div className="height-50 width-50 flex-end">
-                <Saving />
+                { saving && <Saving /> }
             </div>
         </div>
     )

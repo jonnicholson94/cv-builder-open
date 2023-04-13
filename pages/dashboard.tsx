@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useAppSelector } from "../lib/reduxHelpers"
 
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
@@ -11,7 +11,7 @@ import DashboardHeader from "../elements/DashboardHeader"
 import Hamburger from "../components/Hamburger"
 import DashboardForm from "../components/DashboardForm"
 import DashboardDetails from "../components/DashboardDetails"
-import DashboardContact from "../components/DashboardContact"
+import DashboardSocials from "../components/DashboardSocials"
 import DashboardJobs from "../components/DashboardJobs"
 import DashboardEducation from "../components/DashboardEducation"
 import DashboardSideProjects from "../components/DashboardSideProjects"
@@ -38,8 +38,8 @@ const Dashboard = ({ user }) => {
             <DashboardComponent>
                 <DashboardHeader setState={setHamburger} />
                 <DashboardForm>
-                    { active === "Your details" && <DashboardDetails name={name} setName={setName} /> }
-                    { active === "Contact details" && <DashboardContact phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} twitter={twitter} setTwitter={setTwitter} linkedIn={linkedIn} setLinkedIn={setLinkedIn} github={github} setGithub={setGithub} /> }
+                    { active === "Your details" && <DashboardDetails name={name} setName={setName} phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} /> }
+                    { active === "Socials" && <DashboardSocials twitter={twitter} setTwitter={setTwitter} linkedIn={linkedIn} setLinkedIn={setLinkedIn} github={github} setGithub={setGithub} /> }
                     { active === "Job history" && <DashboardJobs />}
                     { active === "Education" && <DashboardEducation />}
                     { active === "Side projects" && <DashboardSideProjects /> }

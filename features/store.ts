@@ -2,10 +2,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import activeSlice from "./activeSlice";
+import statusSlice from "./statusSlice";
 
 export const store = configureStore({
     reducer: {
-        active: activeSlice
+        active: activeSlice,
+        status: statusSlice
     }
 })
 

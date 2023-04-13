@@ -20,6 +20,7 @@ const HomePage = () => {
             <HomepageFooter />
         </div>
     )
+    
 }
 
 export default HomePage
