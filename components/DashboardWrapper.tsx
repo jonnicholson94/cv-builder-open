@@ -23,7 +23,7 @@ const DashboardWrapper = ({ children }) => {
         }
 
         if (e.ctrlKey && e.code === "KeyC") {
-            dispatch(changeActive("Contact details"))
+            dispatch(changeActive("Socials"))
         }
 
         if (e.ctrlKey && e.code === "KeyJ") {

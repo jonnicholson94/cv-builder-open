@@ -5,7 +5,6 @@ import HomepageHero from "../elements/HomepageHero"
 import HomepageInfo from "../elements/HomepageInfo"
 import HomepageNav from "../elements/HomepageNav"
 
-
 const HomePage = () => {
     
     return (
