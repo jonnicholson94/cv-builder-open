@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react"
 import { useAppSelector } from "../lib/reduxHelpers"
+import { useRouter } from "next/router"
 
 import { useQuery } from "react-query"
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'

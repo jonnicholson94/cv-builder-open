@@ -43,6 +43,10 @@ input:active, input:focus, button:focus, textarea:active, textarea:focus {
     outline: none;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 .red {
     background-color: red;
 }

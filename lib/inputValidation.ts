@@ -21,7 +21,7 @@ export const validatePassword = (value: string): string => {
 
 export const validateLength = (value: string): string => {
     if (value.length < 1) {
-        return 'Enter a title for your task'
+        return 'Enter a value'
     } else {
         return ''
     }

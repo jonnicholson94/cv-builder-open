@@ -97,6 +97,11 @@
     cursor: pointer;
 }
 
+.divider {
+    height: 1px;
+    background-color: var(--border);
+}
+
 .view-cv-box {
     height: 75px;
     width: 90%;
@@ -152,6 +157,57 @@
     height: 40px;
     width: 100%;
     background-color: var(--alt-bg);
+}
+
+.dashboard-input-error {
+    border: 1px solid var(--failed);
+}
+
+.dashboard-input-error:focus {
+    border: 1px solid var(--failed);
+}
+
+.input-error, .input-error-icon {
+    color: var(--failed);
+}
+
+.dashboard-button {
+    height: 35px;
+    padding: 0 20px;
+    background-color: var(--alt-bg);
+    border: 1px solid var(--secondary-cta);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.list-item {
+    height: 40px;   
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid var(--alt-bg);
+    color: var(--primary-color);
+    margin-top: 7px;
+}
+
+.list-item:hover {
+    background-color: var(--alt-bg);
+    border: 1px solid var(--border);
+}
+
+.list-item-input {
+    border: none;
+}
+
+.list-item-icon {
+    cursor: pointer;
+}
+
+.list-item-input:focus {
+    border: none;
+    outline: none;
 }
 
 .dashboard-photo-input {
@@ -247,6 +303,21 @@
     color: var(--primary-color);
     font-size: 12px;
     font-weight: 200;
+}
+
+.add-header-icon {
+    color: var(--primary-color);
+}
+
+.add-save-button {
+    height: 50px;
+    background-color: var(--primary-cta);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 900px) {
