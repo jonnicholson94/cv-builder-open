@@ -1,7 +1,8 @@
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useAppSelector } from "../lib/reduxHelpers"
 
+import { useQuery } from "react-query"
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
 import DashboardComponent from "../components/DashboardComponent"
@@ -18,8 +19,16 @@ import DashboardSideProjects from "../components/DashboardSideProjects"
 import DashboardAbout from "../components/DashboardAbout"
 
 import Toolbar from "../elements/Toolbar"
+import useCvFetch from "../lib/hooks/useCvFetch"
+import Pending from "../components/Pending"
+
 
 const Dashboard = ({ user }) => {
+
+    const fetchCv = useCvFetch()
+    const user_id = user.id
+
+    const { isLoading, data } = useQuery(['cvs', user.id], () => fetchCv(user_id))
 
     const { active } = useAppSelector((state) => state.active)
 
@@ -32,6 +41,21 @@ const Dashboard = ({ user }) => {
     const [linkedIn, setLinkedIn] = useState<string>("")
     const [github, setGithub] = useState<string>("")
 
+    useEffect(() => {
+      if (data) {
+        setName(data[0].name)
+        setPhone(data[0].phone)
+        setEmail(data[0].email)
+        setTwitter(data[0].twitter)
+        setLinkedIn(data[0].linkedIn)
+        setGithub(data[0].github)
+      }
+    }, [data])
+
+    if (isLoading) {
+      return <Pending />
+    }
+
     return (
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
@@ -43,7 +67,7 @@ const Dashboard = ({ user }) => {
                     { active === "Job history" && <DashboardJobs />}
                     { active === "Education" && <DashboardEducation />}
                     { active === "Side projects" && <DashboardSideProjects /> }
-                    { active === "About" && <DashboardAbout /> }
+                    { active === "About" && <DashboardAbout  /> }
                 </DashboardForm>
             </DashboardComponent>
             <Hamburger show={hamburger} setShow={setHamburger} />

@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Provider } from 'react-redux'
 import { store } from '../features/store'
 
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 
@@ -24,13 +26,16 @@ import "../styles/homepage.css"
 const MyApp = ({ Component, pageProps }) => {
 
     const [supabase] = useState(() => createBrowserSupabaseClient())
+    const queryClient = new QueryClient()
 
     return (
         <Provider store={store}>
             <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
-                <main className={inter.className}>
-                    <Component {...pageProps} />
-                </main>
+                <QueryClientProvider client={queryClient}>
+                    <main className={inter.className}>
+                        <Component {...pageProps} />
+                    </main>
+                </QueryClientProvider>
             </SessionContextProvider>
         </Provider>
     )

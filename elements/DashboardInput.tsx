@@ -1,17 +1,23 @@
 
-import { useEffect } from "react";
+import { useUser } from "@supabase/auth-helpers-react";
+import useInputUpdate from "../lib/hooks/useInputUpdate";
 
 type Props = {
     placeholder: string,
     type: string,
     state: string,
-    setState: React.Dispatch<React.SetStateAction<string>>
+    setState: React.Dispatch<React.SetStateAction<string>>,
+    submit
 }
 
-const DashboardInput = ({ placeholder, type, state, setState }: Props) => {
+const DashboardInput = ({ placeholder, type, state, setState, submit }: Props) => { 
+    
+    const user = useUser()
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        console.log(e.target.value);
+
+        submit(state, user.id)
+
     }
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

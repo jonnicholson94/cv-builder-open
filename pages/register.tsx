@@ -40,12 +40,13 @@ const Register = () => {
             if (error) {
                 setError(error.message)
                 setPending(false)
-            } else {
-                router.push("/dashboard")
+                return
             }
 
+            router.push("/dashboard")
+
         } catch (error) {
-            console.log("Caught an error..");
+            setError(error.message)
             setPending(false)
         }
     }
