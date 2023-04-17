@@ -44,7 +44,7 @@ const DashboardAbout = ({ user }) => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="About" />
                 <DashboardForm>
                     <DashboardTextarea placeholder="Enter some details about yourself" state={about} setState={setAbout} submit={updateAbout} />
                 </DashboardForm>

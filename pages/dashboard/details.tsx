@@ -52,7 +52,7 @@ const DashboardDetails = ({ user }) => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="Details" />
                 <DashboardForm>
                     <DashboardLabel htmlFor="name" content="Your name" />
                     <DashboardInput placeholder="Enter your name" type="text" state={name} setState={setName} submit={updateName} />

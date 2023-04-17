@@ -52,12 +52,12 @@ const DashboardJobs = () => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="Jobs" />
                 <DashboardForm>
                     <DashboardListHeading title="Job title" employer="Employer" start="Start date" end="End date" />
                     { array.map((job: CreatedJob, index) => {
                         return (
-                            <DashboardListItem index={index} title={job.job_title} employer={job.employer} start={moment(job.start_date).format("DD MMM")} end={job.end_date === "" ? "Current" : moment(job.end_date).format("DD MMM")} key={job.job_id} dragId={dragId} setDragId={setDragId} state={array} setState={setArray} /> 
+                            <DashboardListItem id={job.job_id} index={index} title={job.job_title} employer={job.employer} start={moment(job.start_date).format("DD MMM")} end={job.end_date === "" ? "Current" : moment(job.end_date).format("DD MMM")} key={job.job_id} dragId={dragId} setDragId={setDragId} state={array} setState={setArray} /> 
                         )
                     })}
             

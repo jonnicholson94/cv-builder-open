@@ -49,7 +49,7 @@ const DashboardSocials = ({ user }) => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="Socials" />
                 <DashboardForm>
                     <DashboardLabel htmlFor="twitter" content="Twitter" />
                     <DashboardInput placeholder="Enter your Twitter address" type="text" state={twitter} setState={setTwitter} submit={updateTwitter} />

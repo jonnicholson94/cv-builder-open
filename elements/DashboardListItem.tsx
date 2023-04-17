@@ -1,8 +1,11 @@
 
+import Link from "next/link"
+
 import { handleDrag, handleDragOver, handleDrop } from "../lib/dragFunctions"
 import { CreatedEducation, CreatedJob, CreatedSideProject } from "../types/data"
 
 type Props = {
+    id: string
     index: number,
     title: string,
     employer: string,
@@ -14,15 +17,17 @@ type Props = {
     setState: React.Dispatch<React.SetStateAction<CreatedJob[] | CreatedEducation[] | CreatedSideProject[]>>
 }
 
-const DashboardListItem = ({ index, title, employer, start, end, dragId, setDragId, state, setState }: Props) => {
+const DashboardListItem = ({ id, index, title, employer, start, end, dragId, setDragId, state, setState }: Props) => {
+
+    // draggable onDragOver={handleDragOver} onDragStart={(ev) => handleDrag(ev, setDragId)} onDrop={(ev) => handleDrop(ev, state, dragId, setState)} 
 
     return (
-        <div className="dashboard-list width-100 flex-center" draggable onDragOver={handleDragOver} onDragStart={(ev) => handleDrag(ev, setDragId)} onDrop={(ev) => handleDrop(ev, state, dragId, setState)} key={index}>
+        <Link className="dashboard-list width-100 flex-center" href={`/view-job?id=${id}`} key={index}>
             <p className="dashboard-list-item list-main width-30">{title}</p>
             <p className="dashboard-list-item width-30">{employer}</p>
             <p className="dashboard-list-item width-20">{start}</p>
             <p className="dashboard-list-item width-20">{end}</p>
-        </div>
+        </Link>
     )
 }
 

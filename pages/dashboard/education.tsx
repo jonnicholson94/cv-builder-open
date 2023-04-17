@@ -26,7 +26,7 @@ const DashboardEducation = ({ user }) => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="Education" />
                 <DashboardForm>
                     <DashboardListHeading title="Course" employer="Provider" start="Start date" end="End date" />
                     {/* <DashboardListItem title="BSc Psychology" employer="University of Manchester" start="Sep 14" end="Jul 17" /> */}

@@ -306,6 +306,14 @@
     font-weight: 200;
 }
 
+.add-header-link {
+    height: 40px;
+    background-color: var(--primary-bg);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .add-header-icon {
     color: var(--primary-color);
 }

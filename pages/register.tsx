@@ -43,7 +43,7 @@ const Register = () => {
                 return
             }
 
-            router.push("/dashboard")
+            router.push("/dashboard/details")
 
         } catch (error) {
             setError(error.message)

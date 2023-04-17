@@ -21,7 +21,7 @@ const DashboardSideProjects = ({ user }) => {
         <DashboardWrapper>
             <Sidebar setShow={setHamburger} />
             <DashboardComponent>
-                <DashboardHeader setState={setHamburger} />
+                <DashboardHeader setState={setHamburger} content="Projects" />
                 <DashboardForm>
                     <DashboardProject title="Bla" description="Bla bla" />
                     <DashboardProject title="Bla" description="Bla bla" />

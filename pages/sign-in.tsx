@@ -38,7 +38,7 @@ const SignIn = () => {
                 setError(error.message)
                 setPending(false)
             } else {
-                router.push("/dashboard")
+                router.push("/dashboard/details")
             }
 
         } catch (error) {
