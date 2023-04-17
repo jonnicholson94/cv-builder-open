@@ -240,6 +240,10 @@
     border-bottom: 1px solid var(--border);
 }
 
+.dashboard-list {
+    text-decoration: none;
+}
+
 .dashboard-job-heading, .dashboard-list-item {
     color: var(--alt-color);
     white-space: nowrap;
