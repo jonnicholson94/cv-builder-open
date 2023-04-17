@@ -51,4 +51,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: red;
 }
 
+.icon {
+    color: var(--primary-color);
+}
+
+.icon-alt {
+    color: var(--alt-color);
+}
+
 

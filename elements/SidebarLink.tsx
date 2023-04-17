@@ -1,6 +1,9 @@
-import { useAppDispatch, useAppSelector } from "../lib/reduxHelpers"
-import { changeActive } from "../features/activeSlice"
+
+import Link from "next/link"
+import { useRouter } from "next/router"
+
 import { Active } from "../types/sidebar"
+
 import HelpCard from "./HelpCard"
 
 type Props = {
@@ -9,27 +12,17 @@ type Props = {
     help: string
 }
 
-const SidebarLink = ({ setShow, content, help }: Props) => {
+const SidebarLink = ({ content, help }: Props) => {
+    
+    const router = useRouter()
 
-    const { active } = useAppSelector((state) => state.active)
-    const dispatch = useAppDispatch()
-
-    const handleClick = () => {
-
-        if (active === content) {
-            return
-        }
-
-        setShow(false)
-        dispatch(changeActive(content))
-
-    }
+    const stringArray = router.asPath.split("/")
 
     return (
         <HelpCard content={help} side="right">
-            <p className={`sidebar-link ${ active === content ? "sidebar-active" : ""}`} onClick={() => handleClick()}>
+            <Link className={stringArray[2] === content.toLowerCase() ? `sidebar-link sidebar-active` : "sidebar-link"} href={`/dashboard/${content.toLowerCase()}`}>
                 {content}
-            </p>
+            </Link>
         </HelpCard>
     )
 }

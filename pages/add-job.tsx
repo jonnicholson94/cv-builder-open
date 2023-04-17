@@ -56,17 +56,24 @@ const AddJob = () => {
 
         try {
             
-            await mutation.mutate()
+            const { data, error } = useMutation(['jobs'], async () => {
+                await supabase.from("jobs").insert({
+                    user_id: user.id,
+                    job_title: jobTitle,
+                    employer,
+                    responsibilities, 
+                    achievements,
+                    start_date: startDate,
+                    end_date: endDate
+                })
+        
+                return { data, error }
+            })
 
-            console.log(mutation);
-            
-
-            if (mutation.isSuccess) {
+            if (data) {
                 router.push("/dashboard")
-            }
-
-            if (mutation.isError) {
-                console.log("There's been an error");
+            } else {
+                console.log("There's been an error.");
                 
             }
 

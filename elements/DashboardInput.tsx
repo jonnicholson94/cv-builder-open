@@ -1,6 +1,9 @@
 
+import { useState } from "react";
 import { useUser } from "@supabase/auth-helpers-react";
-import useInputUpdate from "../lib/hooks/useInputUpdate";
+
+import { handleKeyPress, handleChange } from "../lib/inputFunctions";
+import InputError from "./InputError";
 
 type Props = {
     placeholder: string,
@@ -11,36 +14,33 @@ type Props = {
 }
 
 const DashboardInput = ({ placeholder, type, state, setState, submit }: Props) => { 
+
+    const [error, setError] = useState<string>("")
     
     const user = useUser()
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
 
+        if (state.length === 0) {
+            return
+        }
+
         submit(state, user.id)
 
     }
-    
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setState(e.target.value)
-    }
-
-    const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-
-        if (e.code === "Enter") {
-            (e.target as HTMLElement).blur()
-        }
-        
-    }
 
     return (
+        <>
         <input 
-            className="dashboard-input" 
+            className={error ? `dashboard-input dashboard-input-error` : "dashboard-input"}
             placeholder={placeholder} 
             type={type}
             value={state}
-            onChange={handleChange} 
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e, setState, setError)} 
             onBlur={handleBlur}
-            onKeyDown={handleEnterPress} />
+            onKeyDown={handleKeyPress} />
+        { error && <InputError error={error} /> }
+        </>
     )
 }
 

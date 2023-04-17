@@ -1,12 +1,11 @@
 
 import { useEffect, useRef } from "react"
-import { useAppDispatch } from "../lib/reduxHelpers"
-import { changeActive } from "../features/activeSlice"
+import { useRouter } from "next/router"
 
 const DashboardWrapper = ({ children }) => {
 
     const wrapper = useRef(null)
-    const dispatch = useAppDispatch()
+    const router = useRouter()
 
     const handleKeyboardEvents = (e: React.KeyboardEvent<HTMLDivElement>) => {
 
@@ -19,31 +18,31 @@ const DashboardWrapper = ({ children }) => {
         }
 
         if (e.ctrlKey && e.code === "KeyD") {
-            dispatch(changeActive("Your details"))
+            router.push("/dashboard/details")
         }
 
         if (e.ctrlKey && e.code === "KeyC") {
-            dispatch(changeActive("Socials"))
+            router.push("/dashboard/socials")
         }
 
         if (e.ctrlKey && e.code === "KeyJ") {
-            dispatch(changeActive("Job history"))
+            router.push("/dashboard/jobs")
         }
 
         if (e.ctrlKey && e.code === "KeyE") {
-            dispatch(changeActive("Education"))
+            router.push("/dashboard/education")
         }
 
         if (e.ctrlKey && e.code === "KeyP") {
-            dispatch(changeActive("Side projects"))
+            router.push("/dashboard/projects")
         }
 
         if (e.ctrlKey && e.code === "KeyA") {
-            dispatch(changeActive("About"))
+            router.push("/dashboard/about")
         }
 
         if (e.ctrlKey && e.code === "KeyS") {
-            dispatch(changeActive("Skills"))
+            router.push("/dashboard/skills")
         }
     }
 

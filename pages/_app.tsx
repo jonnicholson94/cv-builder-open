@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { store } from '../features/store'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Database } from '../types/supabase'
 
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
@@ -25,7 +26,7 @@ import "../styles/homepage.css"
 
 const MyApp = ({ Component, pageProps }) => {
 
-    const [supabase] = useState(() => createBrowserSupabaseClient())
+    const [supabase] = useState(() => createBrowserSupabaseClient<Database>())
     const queryClient = new QueryClient()
 
     return (
